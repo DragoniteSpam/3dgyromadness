@@ -2,6 +2,15 @@
 
 if (mouse_lock) {
     #region regular movement
+    if (gyro_data) {
+        var dt = delta_time / 1000000;
+        var s = 0.0025 * window_get_width();          // 0.0628 rads per pixel of width
+        var aspect = window_get_height() / window_get_width();
+        var inverty = -1;
+        
+        look_dir -=     dt * gyro_data.angVelYaw * s;
+        look_pitch -=   dt * gyro_data.angVelPitch * s * inverty;
+    }
     look_dir -= (window_mouse_get_x() - window_get_width() / 2) / 10;
     look_pitch -= (window_mouse_get_y() - window_get_height() / 2) / 10;
     look_pitch = clamp(look_pitch, -85, 85);

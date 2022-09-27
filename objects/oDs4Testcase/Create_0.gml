@@ -93,10 +93,3 @@ handler = method(self, testcaseEventHandler);
 client = new Ds4UdpClient();
 client.setOnData(handler);
 resetSlots();
-
-x = room_width / 2;
-y = room_height / 2;
-
-application_surface_draw_enable(false);
-cam = camera_create();
-camera_set_view_size(cam, room_width, room_height)

@@ -7,7 +7,7 @@ surface_resize(application_surface, 1280, 720);
 
 display_set_gui_maximise();
 
-// Bad things happen if you turn off the depth buffer in 3D
+// Bad things happent if you turn off the depth buffer in 3D
 gpu_set_ztestenable(true);
 gpu_set_zwriteenable(true);
 
